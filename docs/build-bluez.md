@@ -1,6 +1,6 @@
 # Build Guide: BlueZ for Volumio (Multi-Arch)
 
-This guide explains how to build **BlueZ 5.72** for Volumio OS using Docker on a Linux host (e.g., Ubuntu 24.04). It supports builds for `armhf`, `arm64`, `amd64`, and `armv6`, producing `.deb` packages for use on Volumio across all Raspberry Pi models and x86 platforms.
+This guide explains how to build **BlueZ 5.83** for Volumio OS using Docker on a Linux host (e.g., Ubuntu 24.04). It supports builds for `armhf`, `arm64`, `amd64`, and `armv6`, producing `.deb` packages for use on Volumio across all Raspberry Pi models and x86 platforms.
 
 ---
 
@@ -24,7 +24,7 @@ This guide explains how to build **BlueZ 5.72** for Volumio OS using Docker on a
 volumio-bluetooth-core/
 ├── build/
 │   └── bluez/                      # BlueZ source and packaging
-│       ├── source/                 # BlueZ 5.72 source
+│       ├── source/                 # BlueZ 5.83 source
 │       ├── debian/                 # Debian packaging files
 │       └── patches/                # Optional patches
 ├── docker/
@@ -36,8 +36,8 @@ volumio-bluetooth-core/
 ├── out/
 │   └── <arch>/                     # Output directory for .deb packages
 ├── package-sources/
-│   ├── bluez_5.72-1.debian.tar.xz  # Debian packaging metadata
-│   └── bluez_5.72.orig.tar.xz      # BlueZ upstream source
+│   ├── bluez_5.83-1.debian.tar.xz  # Debian packaging metadata
+│   └── bluez_5.83.orig.tar.xz      # BlueZ upstream source
 ├── scripts/
 │   └── extract-bluez-source.sh     # Source unpack + prep script
 ├── docs/
@@ -63,7 +63,7 @@ volumio-bluetooth-core/
 
 ### 1. Extract and Prepare Source
 
-Run the extraction script to unpack BlueZ 5.72 and set up Debian packaging:
+Run the extraction script to unpack BlueZ 5.83 and set up Debian packaging:
 
 ```bash
 ./scripts/extract-bluez-source.sh
@@ -71,7 +71,7 @@ Run the extraction script to unpack BlueZ 5.72 and set up Debian packaging:
 
 This script will:
 
-- Extract BlueZ 5.72 into `build/bluez/source/`
+- Extract BlueZ 5.83 into `build/bluez/source/`
 - Copy and apply Debian packaging files to `build/bluez/debian/`
 
 ---
@@ -87,9 +87,9 @@ nano build/bluez/debian/changelog
 Example entry:
 
 ```
-bluez (5.72-1volumio1) bookworm; urgency=medium
+bluez (5.83-1volumio1) bookworm; urgency=medium
 
-  * Volumio-customized BlueZ 5.72 build
+  * Volumio-customized BlueZ 5.83 build
 
  -- Your Name <you@example.com>  Tue, 26 Mar 2024 12:00:00 +0000
 ```
@@ -129,10 +129,10 @@ Example:
 Built `.deb` packages will appear in:
 
 ```
-out/armv6/bluez_5.72-1volumio1_arm.deb
-out/arm64/bluez_5.72-1volumio1_arm64.deb
-out/amd64/bluez_5.72-1volumio1_x64.deb
-out/armhf/bluez_5.72-1volumio1_armv7.deb
+out/armv6/bluez_5.83-1volumio1_arm.deb
+out/arm64/bluez_5.83-1volumio1_arm64.deb
+out/amd64/bluez_5.83-1volumio1_x64.deb
+out/armhf/bluez_5.83-1volumio1_armv7.deb
 ```
 
 ---
@@ -143,17 +143,17 @@ Transfer and install the packages using `dpkg`:
 
 ```bash
 # For ARMv6 (universal Pi)
-dpkg -i out/armv6/bluez_5.72-1volumio1_arm.deb
-dpkg -i out/armv6/libbluetooth3_5.72-1volumio1_arm.deb
+dpkg -i out/armv6/bluez_5.83-1volumio1_arm.deb
+dpkg -i out/armv6/libbluetooth3_5.83-1volumio1_arm.deb
 apt-mark hold bluez libbluetooth3
 ```
 
 For other architectures, substitute the path accordingly:
 
 ```bash
-dpkg -i out/arm64/bluez_5.72-1volumio1_arm64.deb
-dpkg -i out/amd64/bluez_5.72-1volumio1_x64.deb
-dpkg -i out/armhf/bluez_5.72-1volumio1_armv7.deb
+dpkg -i out/arm64/bluez_5.83-1volumio1_arm64.deb
+dpkg -i out/amd64/bluez_5.83-1volumio1_x64.deb
+dpkg -i out/armhf/bluez_5.83-1volumio1_armv7.deb
 ```
 
 ---

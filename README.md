@@ -22,7 +22,7 @@ However, Volumio’s current Bluetooth implementation presents several challenge
 ## 🔧 Requirements
 
 - **Volumio OS**: This project targets Volumio OS, which is based on Debian, and requires compatibility with multiple architectures (armhf, arm64, amd64).
-- **BlueZ**: The core Bluetooth stack for Linux, specifically version 5.72, for managing Bluetooth connections and streaming.
+- **BlueZ**: The core Bluetooth stack for Linux, specifically version 5.83, for managing Bluetooth connections and streaming.
 - **BlueZ-ALSA (bluez-alsa-utils)**: Replaces PulseAudio for Bluetooth audio routing to ensure bit-perfect audio output with low latency.
 
 
@@ -70,7 +70,7 @@ Begin by running the `extract-bluez-source.sh` and `extract-bluez-alsa-utils-sou
 
 This script will:
 
-- Extract BlueZ 5.72 source.
+- Extract BlueZ 5.83 source.
 - Set up the required packaging metadata for building the BlueZ package.
 
 ```bash
@@ -110,8 +110,8 @@ Packages will be placed in the `out/` directory for each architecture.
 
 ```bash
 # Example: install on ARMv6 / universal Pi image
-dpkg -i out/armv6/bluez_5.72-1volumio1_arm.deb
-dpkg -i out/armv6/libbluetooth3_5.72-1volumio1_arm.deb
+dpkg -i out/armv6/bluez_5.83-1volumio1_arm.deb
+dpkg -i out/armv6/libbluetooth3_5.83-1volumio1_arm.deb
 dpkg -i out/armv6/bluez-alsa-utils_4.3.1-1volumio1_arm.deb
 dpkg -i out/armv6/bluez-alsa-utils-common_4.3.1-1volumio1_all.deb
 apt-mark hold bluez libbluetooth3 bluez-alsa-utils bluez-alsa-utils-common

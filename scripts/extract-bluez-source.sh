@@ -8,8 +8,8 @@ if [[ ! -d "package-sources" ]]; then
 fi
 
 # Set the paths for bluez source and debian tarballs (adjust if needed)
-ORIG_TAR_PATH="package-sources/bluez_5.72.orig.tar.xz"  # Path to the original source tarball
-DEBIAN_TAR_PATH="package-sources/bluez_5.72-1.debian.tar.xz"  # Path to the debian tarball
+ORIG_TAR_PATH="package-sources/bluez_5.83.orig.tar.xz"  # Path to the original source tarball
+DEBIAN_TAR_PATH="package-sources/bluez_5.83-1.debian.tar.xz"  # Path to the debian tarball
 
 # Ensure both tarballs exist
 if [[ ! -f "$ORIG_TAR_PATH" ]]; then
