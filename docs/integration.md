@@ -15,7 +15,7 @@ To ensure the correct versions of **BlueZ** and **libbluetooth3** are used in Vo
    ```bash
    # /etc/apt/preferences.d/bluez-pin
    Package: bluez libbluetooth3
-   Pin: version 5.83-1volumio1
+   Pin: version 5.83-1volumio2
    Pin-Priority: 1001
    
    Package: bluez-alsa-utils
