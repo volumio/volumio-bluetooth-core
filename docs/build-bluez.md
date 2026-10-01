@@ -129,10 +129,10 @@ Example:
 Built `.deb` packages will appear in:
 
 ```
-out/armv6/bluez_5.83-1volumio4_arm.deb
-out/arm64/bluez_5.83-1volumio4_arm64.deb
-out/amd64/bluez_5.83-1volumio4_x64.deb
-out/armhf/bluez_5.83-1volumio4_armv7.deb
+out/armv6/bluez_5.83-1volumio5_arm.deb
+out/arm64/bluez_5.83-1volumio5_arm64.deb
+out/amd64/bluez_5.83-1volumio5_x64.deb
+out/armhf/bluez_5.83-1volumio5_armv7.deb
 ```
 
 ---
@@ -143,17 +143,17 @@ Transfer and install the packages using `dpkg`:
 
 ```bash
 # For ARMv6 (universal Pi)
-dpkg -i out/armv6/bluez_5.83-1volumio4_arm.deb
-dpkg -i out/armv6/libbluetooth3_5.83-1volumio4_arm.deb
+dpkg -i out/armv6/bluez_5.83-1volumio5_arm.deb
+dpkg -i out/armv6/libbluetooth3_5.83-1volumio5_arm.deb
 apt-mark hold bluez libbluetooth3
 ```
 
 For other architectures, substitute the path accordingly:
 
 ```bash
-dpkg -i out/arm64/bluez_5.83-1volumio4_arm64.deb
-dpkg -i out/amd64/bluez_5.83-1volumio4_x64.deb
-dpkg -i out/armhf/bluez_5.83-1volumio4_armv7.deb
+dpkg -i out/arm64/bluez_5.83-1volumio5_arm64.deb
+dpkg -i out/amd64/bluez_5.83-1volumio5_x64.deb
+dpkg -i out/armhf/bluez_5.83-1volumio5_armv7.deb
 ```
 
 ---

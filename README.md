@@ -110,8 +110,8 @@ Packages will be placed in the `out/` directory for each architecture.
 
 ```bash
 # Example: install on ARMv6 / universal Pi image
-dpkg -i out/armv6/bluez_5.83-1volumio4_arm.deb
-dpkg -i out/armv6/libbluetooth3_5.83-1volumio4_arm.deb
+dpkg -i out/armv6/bluez_5.83-1volumio5_arm.deb
+dpkg -i out/armv6/libbluetooth3_5.83-1volumio5_arm.deb
 dpkg -i out/armv6/bluez-alsa-utils_4.3.1-1volumio1_arm.deb
 dpkg -i out/armv6/bluez-alsa-utils-common_4.3.1-1volumio1_all.deb
 apt-mark hold bluez libbluetooth3 bluez-alsa-utils bluez-alsa-utils-common
